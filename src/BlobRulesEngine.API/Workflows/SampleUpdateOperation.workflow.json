@@ -1,0 +1,18 @@
+{
+  "WorkflowName": "SampleUpdateOperation",
+  "Rules": [
+    {
+      "RuleName": "SampleRule",
+      "RuleExpressionType": "LambdaExpression",
+      "Expression": "string(input1[\"FormType\"]) == \"SampleFormType\" && string(input1[\"Operation\"]) == \"SampleOperation\"",
+      "Actions": {
+        "OnSuccess": {
+          "Name": "UpdateOperation",
+          "Context": {
+            "Operation": "NextOperation"
+          }
+        }
+      }
+    }
+  ]
+}

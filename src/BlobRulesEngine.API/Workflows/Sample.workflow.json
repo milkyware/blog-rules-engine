@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/RulesEngine/main/schema/workflow-schema.json",
+  "WorkflowName": "SampleWorkflow",
+  "Rules": [
+    {
+      "RuleName": "GeneralGrevious",
+      "RuleExpressionType": "LambdaExpression",
+      "Expression": "input1.ToString() == \"Hello there\"",
+      "Actions": {
+        "OnSuccess": {
+          "Name": "OutputExpression",
+          "Context": {
+            "Expression": "input1 + \" General Kenobi\""
+          }
+        }
+      }
+    },
+    {
+      "RuleName": "Droids",
+      "RuleExpressionType": "LambdaExpression",
+      "Expression": "input1.ToString() != \"Hello there\"",
+      "Actions": {
+        "OnSuccess": {
+          "Name": "OutputExpression",
+          "Context": {
+            "Expression": "\"These aren't the droids you're looking for\""
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/RulesEngine/main/schema/workflow-schema.json",
+  "WorkflowName": "SampleActionWorkflow",
+  "Rules": [
+    {
+      "RuleName": "Sample",
+      "RuleExpressionType": "LambdaExpression",
+      "Expression": "true",
+      "Actions": {
+        "OnSuccess": {
+          "Name": "SampleAction",
+          "Context": {
+            "Name": "Fred"
+          }
+        }
+      }
+    }
+  ]
+}
